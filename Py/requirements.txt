@@ -1,0 +1,8 @@
+openai-whisper
+pyaudio
+keyboard
+pyautogui
+pynput
+SpeechRecognition
+python-Levenshtein
+duckdb

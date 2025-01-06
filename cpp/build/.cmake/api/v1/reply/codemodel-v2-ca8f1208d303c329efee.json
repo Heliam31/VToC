@@ -1,0 +1,117 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						3
+					]
+				},
+				{
+					"build" : "C:/Users/mihai/Desktop/VtoC/binPA",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-lib.portaudio-Debug-6324efbabcc8bcf6d76e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "lib/portaudio",
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "VtoC",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "main::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-main-Debug-62cd36bb3e1d94068dc6.json",
+					"name" : "main",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "portaudio::@f1b87045017a990626d3",
+					"jsonFile" : "target-portaudio-Debug-0bc70726880a8c6ce7b7.json",
+					"name" : "portaudio",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "portaudio_static::@f1b87045017a990626d3",
+					"jsonFile" : "target-portaudio_static-Debug-9c6915afb21b5ebd1690.json",
+					"name" : "portaudio_static",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "record::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-record-Debug-e5c1cbbc24b1b165efeb.json",
+					"name" : "record",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "uninstall::@f1b87045017a990626d3",
+					"jsonFile" : "target-uninstall-Debug-c0da427a9b664bbe3f98.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/mihai/Desktop/VtoC/build",
+		"source" : "C:/Users/mihai/Desktop/VtoC"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
