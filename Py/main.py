@@ -1,134 +1,83 @@
 
-from asyncio import run, set_event_loop_policy, WindowsSelectorEventLoopPolicy
-from recordWin import speech_to_text
-from os import remove, listdir, unlink, path, getcwd
+from speech_to_text import speech_to_text
+from os import remove, listdir, unlink, path, getcwd, _exit
 from sys import exit
-from time import time, sleep
-from subprocess import Popen
-from whisper import load_model
-from threading import Thread
+from time import time
 import string
-import keyboard
 import pyautogui
 from pynput.mouse import Button, Controller, Listener
+import Levenshtein
+import duckdb as dd
 
-pressed = 0 
+
 
 def on_click(x, y, button, pressed):
     if button == Button.x1:  # MB4 correspond généralement à Button.x1
         if pressed:
             user_message =  speech_to_text()
-            print("message : ",user_message)
             start = time()
-            phrase = user_message.lower().translate(str.maketrans("","", string.punctuation)).split()
-            print("apres split : ",phrase)
+            phrase = user_message.lower().translate(str.maketrans("","", string.punctuation)).replace(' ', '')
+
             if user_message.lower().translate(str.maketrans("","", string.punctuation)).replace(' ', '') == "aurevoir":
-                print("labite")
-            cmdLi=[]
-            if len(phrase) == 1: #Sur Hotage
-                print("hotage")
-                match phrase[0]:
-                    case "menotte":
-                        cmdLi.append("1")
-                    case "viens":
-                        cmdLi.append("2")
-                        cmdLi.append("2")
-                    case "stop":
-                        cmdLi.append("2")
-                        cmdLi.append("3")
-            elif len(phrase) == 2: #Dans le vide manip equipe
-                match phrase[0]:
-                    case "jaune":
-                        cmdLi.append("f5")
-                    case "bleu":
-                        cmdLi.append("f6")
-                    case "rouge":
-                        cmdLi.append("f7")
-                    case _:                                                                                               
-                        print("Commande inconnue")
-            
-                match phrase[1]:
-                    case "ici":
-                        cmdLi.append("1")
-                    case "finalisation":
-                        cmdLi.append("6")
-                    case "un":
-                        cmdLi.append("2")
-                        cmdLi.append("1")
-                    case "deux":
-                        cmdLi.append("2")
-                        cmdLi.append("2")   
-                    case "diamant":
-                        cmdLi.append("2")
-                        cmdLi.append("3")   
-                    case "triangle":
-                        cmdLi.append("2")
-                        cmdLi.append("4")              
-            elif len(phrase) == 3:
-                match phrase[0]:
-                    case "jaune":
-                        cmdLi.append("f5")
-                    case "bleu":
-                        cmdLi.append("f6")
-                    case "rouge":
-                        cmdLi.append("f7")
-                    case _:                                                                                               
-                        print("Commande inconnue")
-                
-                match phrase[1]:
-                    case "rassemblement":
-                        cmdLi.append("1")
-                        match phrase[2]:
-                            case "séparer":
-                                cmdLi.append("1")
-                            case "gauche":
-                                cmdLi.append("2")
-                            case "droite":
-                                cmdLi.append("3")
-                    case "entrer":
-                        cmdLi.append("2")
+                print("Exit message detecté, bye")
+                _exit(1)
 
-                        match phrase[2]:
-                            case "propre":
-                                cmdLi.append("1")
-                            case "aveuglante":
-                                cmdLi.append("2")
-                            case "lacrymogène":
-                                cmdLi.append("3")
+            #Base de phrases
+            commands = ""
+            con = dd.connect('my_database.db')
 
-                    case "destruction":
-                        cmdLi.append("3")
+            try:
+                result = con.execute(f"SELECT commands FROM phrases WHERE phrase = '{phrase}';").fetchall()
+            except dd.CatalogException:
+                print("[ERROR] Base de données vide, créez votre base de phrases")
 
-                        match phrase[2]:
-                            case "pied":
-                                cmdLi.append("1")
-                                cmdLi.append("1")
-                            case "pompe":
-                                cmdLi.append("2")
-                                cmdLi.append("1")
-                            case "bombe":
-                                cmdLi.append("3")
-                                cmdLi.append("1")
+            if result:
+                commands = result
+                print("Trouvé correspondance")
+            else: 
+                # On a pas trouvé exactement la phrase  
+                ph_list = con.execute('SELECT phrase FROM phrases').fetchall()
+
+                #Comparaison de notre phrase à celles de la base
+                smallerdist = ["",-1]
+                for ph in ph_list:
+                    distance = Levenshtein.distance(phrase, ph[0])
+                    # print(f"Distance de Levenshtein : {distance}")
+                    if smallerdist == ["",-1]:
+                        smallerdist = [ph[0],distance]
+                    if distance == 0:
+                        smallerdist = [ph[0],distance]
+                        break
+                    if distance < smallerdist[1]:
+                        smallerdist = [ph[0], distance]
                     
+                print(f"phrase sélectionnée : {smallerdist[0]} avec confiance {smallerdist[1]}")
+                if smallerdist != ["",-1] and smallerdist[1] < 5:
+                    commands = con.execute("SELECT commands FROM phrases WHERE phrase = \'" + smallerdist[0] + "\';").fetchall()
+            # Si on a selectionné une phrase de la base et que sa distance est < 10 mots
+            if commands != "":
+                mouse = Controller()
+                mouse.click(Button.middle)
 
-            mouse = Controller()
-            mouse.click(Button.middle)
-            print(cmdLi)
-            for zz in cmdLi:
-                pyautogui.press(zz)
+                for zz in commands[0][0]:
+                    print("pressing :  ", zz)
+                    pyautogui.press(zz)
+            else:
+                print("pas de commande trouvée")
 
             print(f"\n-------------------------Generated in {(time()-start)}s.-------------------------")
         else:
             print("Bouton MB4 relâché")
 
-async def main():
-    with Listener(on_click=on_click) as listener:    
-        listener.join()
-                
+def main():
+    try:
+        with Listener(on_click=on_click) as listener:    
+            listener.join()
+    except KeyboardInterrupt:
+        _exit(1)
     
 
-if __name__ == "__main__":
-    set_event_loop_policy(WindowsSelectorEventLoopPolicy())    
-    run(main())
+if __name__ == "__main__": 
+    main()
     
     

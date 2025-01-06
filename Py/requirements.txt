@@ -1,6 +1,3 @@
-openai-whisper
-pyaudio
-keyboard
 pyautogui
 pynput
 SpeechRecognition

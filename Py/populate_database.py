@@ -4,7 +4,7 @@ import duckdb as dd
 con = dd.connect('my_database.db')
 
 try:
-    result = con.execute('SELECT * FROM phrases').fetchall()
+    result = con.execute('SELECT phrase FROM phrases').fetchall()
     print("Données existantes :", result)
 except dd.CatalogException:
     print("Aucune table trouvée, vous pouvez en créer de nouvelles.")
@@ -22,6 +22,8 @@ except dd.CatalogException:
     ('ouvrezcetteporte', ARRAY['f5', '1']),
     ('crochetezcetteporte', ARRAY['f6', '1']);
     ''')
+
+
 
 res = con.execute('SELECT phrase FROM phrases').fetchall()
 # print(res[0][0])
