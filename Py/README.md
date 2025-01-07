@@ -5,45 +5,51 @@ The database is filled with macros for the game ReadyOrNot but is usable for any
 
 ## Implémented
 
+### Team colors : 
+
+A tous = gold
+Rouge = red team
+Bleu = blue team
+
 ### viseur sur porte :
 
 ```
 	1 = empiler
-		1 = split
-		2 = gauche
-		3 = droite
-		4 = auto #TODO
+		1 = split               "Couleur sur cette porte"
+		2 = gauche              "Couleur sur cette porte à gauche"
+		3 = droite              "Couleur sur cette porte à droite"
+		4 = auto                #TODO
 ```
 
 ```
 	2 = aller
-		1 = nettoyer
-		2 = flash
-		3 = gmd 		#TODO
-		4 = lacrymo
-		5 = lance grenade	#TODO
-		6 = avec team leader		#TODO
+		1 = nettoyer            "couleur entrée et nettoyer"
+		2 = flash               "couleur flash puis rentrer"
+		3 = gmd 		        #TODO
+		4 = lacrymo             "couleur lacrymo pu rentrer"
+		5 = lance grenade	    #TODO
+		6 = avec team leader    "couleur rentrer avec moi"
 ```
 
 ### viseur sur hotage :  
 
 ```
-	1 = menottez
-	2 -> 2 = viens ici
+	1 = menottez                "mettez-lui des menottes"
+	2 -> 2 = viens ici          "viens ici"
 ```
 
 ### viseur dans le vide : 
 
 ```
-	1 = ICI
+	1 = ICI                     "aller là-bas"
 
-	2 = Formation
-		1 = Une file
-		2 = 2 files
-		3 = diamant
-		4 = triangle
+	2 = Formation   
+		1 = Une file            "formation une fil"
+		2 = 2 files             "formation de fil",
+		3 = diamant             "formation diamant"
+		4 = triangle            "formation triangle"
 
-	6 = Fouillez pour preuves
+	6 = Fouillez pour preuves   "fouiller partout"
 ```
 
 ## TODO
