@@ -1,0 +1,223 @@
+[
+    {
+        "phrase": "rouge entrée et nettoyer",
+        "commands": [
+            "f7",
+            "2",
+            "1"
+        ]
+    },
+    {
+        "phrase": "bleu entrée et nettoyer",
+        "commands": [
+            "f6",
+            "2",
+            "1"
+        ]
+    },
+    {
+        "phrase": "à tous entrée et nettoyer",
+        "commands": [
+            "f5",
+            "2",
+            "1"
+        ]
+    },
+    {
+        "phrase": "à tous flash puis rentrer",
+        "commands": [
+            "f5",
+            "2",
+            "2"
+        ]
+    },
+    {
+        "phrase": "rouge flash puis rentrer",
+        "commands": [
+            "f7",
+            "2",
+            "2"
+        ]
+    },
+    {
+        "phrase": "bleu flash puis rentré",
+        "commands": [
+            "f6",
+            "2",
+            "2"
+        ]
+    },
+    {
+        "phrase": "à tous sur cette porte",
+        "commands": [
+            "f5",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "phrase": "bleu sur cette porte",
+        "commands": [
+            "f6",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "phrase": "rouge sur cette porte",
+        "commands": [
+            "f7",
+            "1",
+            "1"
+        ]
+    },
+    {
+        "phrase": "à tout sur cette porte à droite",
+        "commands": [
+            "f5",
+            "1",
+            "3"
+        ]
+    },
+    {
+        "phrase": "à tous sur cette porte à gauche",
+        "commands": [
+            "f5",
+            "1",
+            "2"
+        ]
+    },
+    {
+        "phrase": "bleu sur cette porte à droite",
+        "commands": [
+            "f6",
+            "1",
+            "3"
+        ]
+    },
+    {
+        "phrase": "bleu sur cette porte à gauche",
+        "commands": [
+            "f6",
+            "1",
+            "2"
+        ]
+    },
+    {
+        "phrase": "rouge sur cette porte à droite",
+        "commands": [
+            "f7",
+            "1",
+            "3"
+        ]
+    },
+    {
+        "phrase": "rouge sur cette porte à gauche",
+        "commands": [
+            "f7",
+            "1",
+            "2"
+        ]
+    },
+    {
+        "phrase": "à tous lacrymo pu rentrer",
+        "commands": [
+            "f5",
+            "2",
+            "4"
+        ]
+    },
+    {
+        "phrase": "bleu lacrymo pu rentrer",
+        "commands": [
+            "f6",
+            "2",
+            "4"
+        ]
+    },
+    {
+        "phrase": "rouge lacrymo pu rentrer",
+        "commands": [
+            "f7",
+            "2",
+            "4"
+        ]
+    },
+    {
+        "phrase": "viens ici",
+        "commands": [
+            "2",
+            "2"
+        ]
+    },
+    {
+        "phrase": "mettez-lui des menottes",
+        "commands": [
+            "1"
+        ]
+    },
+    {
+        "phrase": "aller là-bas",
+        "commands": [
+            "1"
+        ]
+    },
+    {
+        "phrase": "fouiller partout",
+        "commands": [
+            "6"
+        ]
+    },
+    {
+        "phrase": "formation une fil",
+        "commands": [
+            "2",
+            "1"
+        ]
+    },
+    {
+        "phrase": "formation de fil",
+        "commands": [
+            "2",
+            "2"
+        ]
+    },
+    {
+        "phrase": "formation diamant",
+        "commands": [
+            "2",
+            "3"
+        ]
+    },
+    {
+        "phrase": "formation triangle",
+        "commands": [
+            "2",
+            "4"
+        ]
+    },
+    {
+        "phrase": "à tous rentrer avec moi",
+        "commands": [
+            "f5",
+            "2",
+            "6"
+        ]
+    },
+    {
+        "phrase": "bleu rentré avec moi",
+        "commands": [
+            "f6",
+            "2",
+            "6"
+        ]
+    },
+    {
+        "phrase": "rouge rentrer avec moi",
+        "commands": [
+            "f7",
+            "2",
+            "6"
+        ]
+    }
+]
