@@ -5,13 +5,17 @@ The database is filled with macros for the game ReadyOrNot but is usable for any
 
 ## Implémented
 
-viseur sur porte :
+### viseur sur porte :
+
+```
 	1 = empiler
 		1 = split
 		2 = gauche
 		3 = droite
 		4 = auto #TODO
+```
 
+```
 	2 = aller
 		1 = nettoyer
 		2 = flash
@@ -19,13 +23,18 @@ viseur sur porte :
 		4 = lacrymo
 		5 = lance grenade	#TODO
 		6 = avec team leader		#TODO
+```
 
-viseur sur hotage :
+### viseur sur hotage :  
+
+```
 	1 = menottez
-
 	2 -> 2 = viens ici
+```
 
-viseur dans le vide : 
+### viseur dans le vide : 
+
+```
 	1 = ICI
 
 	2 = Formation
@@ -35,10 +44,11 @@ viseur dans le vide :
 		4 = triangle
 
 	6 = Fouillez pour preuves
-
+```
 
 ## TODO
 
+```
 3 = Breach
 	1 = Pied
 	2 = fusil a pompe
@@ -56,3 +66,4 @@ viseur dans le vide :
 
 
 7 = suivez moi
+```
