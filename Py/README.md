@@ -52,6 +52,12 @@ Bleu = blue team
 	6 = Fouillez pour preuves   "couleur fouiller partout"
 ```
 
+### Sur porte verouillée : 
+
+```
+2 = "Crochetez cette porte"
+```
+
 ## TODO
 
 ```
@@ -81,6 +87,4 @@ Bleu = blue team
 
 7 = suivez moi
 
-
-Sur porte verouillée : 2 = "Crochetez la porte"
 ```

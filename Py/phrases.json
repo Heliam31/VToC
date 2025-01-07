@@ -311,6 +311,12 @@
         ]
     },
     {
+        "phrase": "Crochetez cette porte",
+        "commands": [
+            "2"
+        ]
+    },
+    {
         "phrase": "rouge formation triangle",
         "commands": [
             "f7",
