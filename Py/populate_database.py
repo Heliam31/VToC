@@ -106,57 +106,60 @@ def modif_database():
             else:
                 print("Répétez la phrase")
 
-        ans = input("Que voulez vous faire? modif_phrase / modif_command / supprimer : ")
-        match ans:
-            case "modif_phrase":
-                phrase = ""
-                print("donnez la phrase que vous voulez dire a la place de : ", phrase_to_modif)
-                good = 0
-                while not good:
-                    phrase =  speech_to_text()
-                    ans = input("c'est bien cette phrase? yes or no \n")
-                    if ans == "yes":
-                        good = 1
-                    else:
-                        print("Répétez la phrase")
+        ans = input("Voulez vous modifier la phrase? (yes) : ")
+        if ans == "yes":
+            phrase = ""
+            print("donnez la phrase que vous voulez dire a la place de : ", phrase_to_modif)
+            good = 0
+            while not good:
+                phrase =  speech_to_text()
+                ans = input("c'est bien cette phrase? yes or no \n")
+                if ans == "yes":
+                    good = 1
+                else:
+                    print("Répétez la phrase")
 
-                con.execute(f'''
-                    UPDATE phrases
-                    SET phrase = '{phrase.lower().translate(str.maketrans("","", string.punctuation)).replace(' ', '')}'
+            con.execute(f'''
+                UPDATE phrases
+                SET phrase = '{phrase.lower().translate(str.maketrans("","", string.punctuation)).replace(' ', '')}'
 
-                    WHERE phrase = {phrase_to_modif.lower().translate(str.maketrans("","", string.punctuation)).replace(' ', '')};
-                ''')
+                WHERE phrase = '{phrase_to_modif.lower().translate(str.maketrans("","", string.punctuation)).replace(' ', '')}';
+            ''')
 
-                print("la phrase a bien été modifiée")
-            case "modif_command":
-                cmd_list = []
+            phrase_to_modif = phrase
+            print("la phrase a bien été modifiée")
 
-                print("Donnez nous la nouvelle combinaison, une touche par une, envoyez stop une fois terminé")
-                good = 0
-                while not good:
-                    key = input("Entrez une touche : ")
-                    if key.lower().replace(' ', '') == "stop":
-                        good = 1
-                    else:
-                        cmd_list.append(key)
-                        print("liste des commandes ", cmd_list)
+        ans = input("Voulez vous modifier la commande ? (yes) : ")
+        if ans == "yes":
+            cmd_list = []
 
-                con.execute(f'''
-                    UPDATE phrases
-                    SET commands = ARRAY{cmd_list}
-                    WHERE phrase = '{phrase_to_modif.lower().translate(str.maketrans("","", string.punctuation)).replace(' ', '')}';
-                ''')
+            print("Donnez nous la nouvelle combinaison, une touche par une, envoyez stop une fois terminé")
+            good = 0
+            while not good:
+                key = input("Entrez une touche : ")
+                if key.lower().replace(' ', '') == "stop":
+                    good = 1
+                else:
+                    cmd_list.append(key)
+                    print("liste des commandes ", cmd_list)
 
-                print("commande modifiée!")
+            con.execute(f'''
+                UPDATE phrases
+                SET commands = ARRAY{cmd_list}
+                WHERE phrase = '{phrase_to_modif.lower().translate(str.maketrans("","", string.punctuation)).replace(' ', '')}';
+            ''')
 
-            case "supprimer":
-                print("suppression de la phrase : ", phrase_to_modif)
-                con.execute(f'''
-                    DELETE FROM phrases
-                    WHERE phrase = '{phrase_to_modif.lower().translate(str.maketrans("","", string.punctuation)).replace(' ', '')}';
-                ''')
+            print("commande modifiée!")
 
-                print("suppression terminée")
+        ans = input("Voulez vous supprimer cette phrase ? (yes) : ")
+        if ans == "yes":
+            print("suppression de la phrase : ", phrase_to_modif)
+            con.execute(f'''
+                DELETE FROM phrases
+                WHERE phrase = '{phrase_to_modif.lower().translate(str.maketrans("","", string.punctuation)).replace(' ', '')}';
+            ''')
+
+            print("suppression terminée")
 
         result = con.execute('SELECT * FROM phrases').fetchall()
         print("Nouvelle DB :", result)
@@ -167,6 +170,7 @@ def modif_database():
             done = 1
         else:
             print("bah nique ta mère")
+            done = 1
 
 
 if __name__ == "__main__": 

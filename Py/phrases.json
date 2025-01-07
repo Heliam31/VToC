@@ -157,41 +157,47 @@
         ]
     },
     {
-        "phrase": "aller là-bas",
+        "phrase": "à tous aller là-bas",
         "commands": [
+            "f5",
             "1"
         ]
     },
     {
-        "phrase": "fouiller partout",
+        "phrase": "à tous fouillé partout",
         "commands": [
+            "f5",
             "6"
         ]
     },
     {
-        "phrase": "formation une fil",
+        "phrase": "à tous formation une fil",
         "commands": [
+            "f5",
             "2",
             "1"
         ]
     },
     {
-        "phrase": "formation de fil",
+        "phrase": "à tous formation de fil",
         "commands": [
+            "f5",
             "2",
             "2"
         ]
     },
     {
-        "phrase": "formation diamant",
+        "phrase": "à tous formation diamant",
         "commands": [
+            "f5",
             "2",
             "3"
         ]
     },
     {
-        "phrase": "formation triangle",
+        "phrase": "à tous formation triangle",
         "commands": [
+            "f5",
             "2",
             "4"
         ]
@@ -218,6 +224,98 @@
             "f7",
             "2",
             "6"
+        ]
+    },
+    {
+        "phrase": "bleu allez là-bas",
+        "commands": [
+            "f6",
+            "1"
+        ]
+    },
+    {
+        "phrase": "rouge allez là-bas",
+        "commands": [
+            "f7",
+            "1"
+        ]
+    },
+    {
+        "phrase": "bleu fouillé partout",
+        "commands": [
+            "f6",
+            "6"
+        ]
+    },
+    {
+        "phrase": "rouge fouillé partout",
+        "commands": [
+            "f7",
+            "6"
+        ]
+    },
+    {
+        "phrase": "bleu formation une fil",
+        "commands": [
+            "f6",
+            "2",
+            "1"
+        ]
+    },
+    {
+        "phrase": "rouge formation une fil",
+        "commands": [
+            "f7",
+            "2",
+            "1"
+        ]
+    },
+    {
+        "phrase": "bleu formation de fil",
+        "commands": [
+            "f6",
+            "2",
+            "2"
+        ]
+    },
+    {
+        "phrase": "rouge formation de fil",
+        "commands": [
+            "f7",
+            "2",
+            "2"
+        ]
+    },
+    {
+        "phrase": "bleu formation diamant",
+        "commands": [
+            "f6",
+            "2",
+            "3"
+        ]
+    },
+    {
+        "phrase": "rouge formation diamant",
+        "commands": [
+            "f7",
+            "2",
+            "3"
+        ]
+    },
+    {
+        "phrase": "bleu formation triangle",
+        "commands": [
+            "f6",
+            "2",
+            "4"
+        ]
+    },
+    {
+        "phrase": "rouge formation triangle",
+        "commands": [
+            "f7",
+            "2",
+            "4"
         ]
     }
 ]

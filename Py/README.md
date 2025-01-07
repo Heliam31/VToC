@@ -41,15 +41,15 @@ Bleu = blue team
 ### viseur dans le vide : 
 
 ```
-	1 = ICI                     "aller là-bas"
+	1 = ICI                     "couleur aller là-bas"
 
 	2 = Formation   
-		1 = Une file            "formation une fil"
-		2 = 2 files             "formation de fil",
-		3 = diamant             "formation diamant"
-		4 = triangle            "formation triangle"
+		1 = Une file            "couleur formation une fil"
+		2 = 2 files             "couleur formation de fil",
+		3 = diamant             "couleur formation diamant"
+		4 = triangle            "couleur formation triangle"
 
-	6 = Fouillez pour preuves   "fouiller partout"
+	6 = Fouillez pour preuves   "couleur fouiller partout"
 ```
 
 ## TODO
@@ -62,6 +62,14 @@ Bleu = blue team
 	4 = belier
 	5 avec moi	
 
+	puis apres la selection 
+	1 = normal
+	2 = flash
+	3 = GMD
+	4 = lacrymo
+	5 = lancegrenade
+	6 = avec moi
+
 4 = scannez
 	1 = faufiler
 	2 = balayer
@@ -72,4 +80,7 @@ Bleu = blue team
 
 
 7 = suivez moi
+
+
+Sur porte verouillée : 2 = "Crochetez la porte"
 ```
