@@ -3,3 +3,4 @@ pynput
 SpeechRecognition
 python-Levenshtein
 duckdb
+PyAudio
