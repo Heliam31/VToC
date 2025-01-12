@@ -1,5 +1,0 @@
-pyautogui
-pynput
-SpeechRecognition
-python-Levenshtein
-duckdb
