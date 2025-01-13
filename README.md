@@ -62,11 +62,11 @@ Bleu = blue team
 
 ```
 3 = Breach
-	1 = Pied
+	1 = Pied           Couleur Coup de pied dans la porte
 	2 = fusil a pompe
-	3 = C4
+	3 = C4             C4puis___
 	4 = belier
-	5 avec moi	
+	5 avec 
 
 	puis apres la selection 
 	1 = normal
@@ -78,7 +78,7 @@ Bleu = blue team
 
 4 = scannez
 	1 = faufiler
-	2 = balayer
+	2 = balayer        "Bleu/Rouge/___ balayer la porte"
 	3 = jeter oeil
 5 = passer mirroir
 

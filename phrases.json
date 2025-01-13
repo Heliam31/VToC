@@ -1,0 +1,56 @@
+[
+    {
+        "phrase": "bleu coup de pied dans la porte",
+        "commands": [
+            "f6",
+            "3",
+            "1"
+        ]
+    },
+    {
+        "phrase": "rouge coup de pied dans la porte",
+        "commands": [
+            "f7",
+            "3",
+            "1"
+        ]
+    },
+    {
+        "phrase": "C4 puits Flash",
+        "commands": [
+            "3",
+            "2"
+        ]
+    },
+    {
+        "phrase": "C4 puit lacrymo",
+        "commands": [
+            "3",
+            "4"
+        ]
+    },
+    {
+        "phrase": "bleu balayer la porte",
+        "commands": [
+            "f6",
+            "4",
+            "2"
+        ]
+    },
+    {
+        "phrase": "balayer la porte",
+        "commands": [
+            "f5",
+            "4",
+            "2"
+        ]
+    },
+    {
+        "phrase": "rouge balayer la porte",
+        "commands": [
+            "f7",
+            "4",
+            "2"
+        ]
+    }
+]

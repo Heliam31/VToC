@@ -7,7 +7,7 @@ from speech_to_text import speech_to_text
 
 def populate_database():
     # Create a persistent DuckDB database
-    con = dd.connect('my_database.db')
+    con = dd.connect('Py/my_database.db')
 
     try:
         result = con.execute('SELECT phrase FROM phrases').fetchall()
@@ -79,7 +79,8 @@ def populate_database():
         ('{user_message.lower().translate(str.maketrans("","", string.punctuation)).replace(' ', '')}', ARRAY{keyLi});
         ''')
 
-        result = con.execute(f"SELECT * FROM phrases WHERE phrase = '{user_message.lower().translate(str.maketrans("","", string.punctuation)).replace(' ', '')}';").fetchall()
+        cmd = f"SELECT * FROM phrases WHERE phrase = '{user_message.lower().translate(str.maketrans('', '', string.punctuation)).replace(' ', '')}';"
+        result = con.execute(cmd).fetchall()
         print("commande ajoutée : \n", result)
         key = input("Voulez vous entrer une autre commande? yes or no : ")
         if key.lower().translate(str.maketrans("","", string.punctuation)).replace(' ', '') != "yes":
